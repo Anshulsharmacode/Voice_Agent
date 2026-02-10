@@ -2,7 +2,7 @@ import os
 import webbrowser
 import urllib.parse
 from typing import Dict, Optional, List
-from logs import logger
+from logs.logger import logger
 
 if 'DISPLAY' not in os.environ or os.environ['DISPLAY'] == ':0':
     # Check if :1 or :2 is available
@@ -27,31 +27,9 @@ from .insert_in_file import get_insert_in_file_tool, insert_in_file
 
 from .execute_command import execute_command
 from .execute_command import get_execute_command_tool
-from .image_analysis import analyze_image, get_image_analysis_tool
 from .open_browser import open_browser, get_open_browser_tool
 
 
-# Try to import UI automation tools with error handling
-UI_AUTOMATION_AVAILABLE = False
-try:
-    from .navigate_ui import (
-        take_screenshot, get_screenshot_tool,
-        get_window_list, get_window_list_tool,
-        focus_window, get_focus_window_tool,
-        click_at_position, get_click_tool,
-        type_text, get_type_text_tool,
-        press_key, get_press_key_tool,
-        copy_to_clipboard, get_copy_to_clipboard_tool,
-        paste_from_clipboard, get_paste_from_clipboard_tool,
-        get_screen_info, get_screen_info_tool
-    )
-    UI_AUTOMATION_AVAILABLE = True
-    logger.system("UI automation tools loaded successfully")
-except Exception as e:
-    logger.warning(f"UI automation tools not available: {str(e)}")
-    logger.warning("UI automation features will be disabled")
-    
-    raise Exception("UI automation not available - no display server detected")
 
 
 # Dictionary of all tool executors
@@ -69,18 +47,8 @@ TOOL_EXECUTORS = {
     "replace_in_file": replace_in_file,
     "insert_in_file": insert_in_file,
     "execute_command": execute_command,
-    "analyze_image": analyze_image,
     "open_browser": open_browser,
-    # UI Automation tools (will be dummy functions if not available)
-    "take_screenshot": take_screenshot,
-    "get_window_list": get_window_list,
-    "focus_window": focus_window,
-    "click_at_position": click_at_position,
-    "type_text": type_text,
-    "press_key": press_key,
-    "copy_to_clipboard": copy_to_clipboard,
-    "paste_from_clipboard": paste_from_clipboard,
-    "get_screen_info": get_screen_info
+
 }
 
 # Dictionary of all available tools and their definitions
@@ -99,18 +67,9 @@ AVAILABLE_TOOLS = {
     "replace_in_file": get_replace_in_file_tool(),
     "insert_in_file": get_insert_in_file_tool(),
     "execute_command": get_execute_command_tool(),
-    "analyze_image": get_image_analysis_tool(),
     "open_browser": get_open_browser_tool(),
-    # UI Automation tools (will be dummy tools if not available)
-    "take_screenshot": get_screenshot_tool(),
-    "get_window_list": get_window_list_tool(),
-    "focus_window": get_focus_window_tool(),
-    "click_at_position": get_click_tool(),
-    "type_text": get_type_text_tool(),
-    "press_key": get_press_key_tool(),
-    "copy_to_clipboard": get_copy_to_clipboard_tool(),
-    "paste_from_clipboard": get_paste_from_clipboard_tool(),
-    "get_screen_info": get_screen_info_tool()
+   
+  
 }
 
 def get_tools(tool_names: List[str]) -> List[Dict]:
@@ -163,27 +122,8 @@ __all__ = [
     'insert_in_file',
     'execute_command',
     'get_execute_command_tool',
-    'analyze_image',
-    'get_image_analysis_tool',
+  
     'open_browser',
     'get_open_browser_tool',
-    # UI Automation exports (will be dummy functions if not available)
-    'take_screenshot',
-    'get_screenshot_tool',
-    'get_window_list',
-    'get_window_list_tool',
-    'focus_window',
-    'get_focus_window_tool',
-    'click_at_position',
-    'get_click_tool',
-    'type_text',
-    'get_type_text_tool',
-    'press_key',
-    'get_press_key_tool',
-    'copy_to_clipboard',
-    'get_copy_to_clipboard_tool',
-    'paste_from_clipboard',
-    'get_paste_from_clipboard_tool',
-    'get_screen_info',
-    'get_screen_info_tool'
+   
 ]

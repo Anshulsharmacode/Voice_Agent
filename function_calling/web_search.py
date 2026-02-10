@@ -3,7 +3,7 @@ import aiohttp
 import json
 from bs4 import BeautifulSoup
 import os
-from logs import logger
+from logs.logger import logger
 from duckduckgo_search import DDGS
 def get_web_search_tool() -> Dict:
     return {

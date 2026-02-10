@@ -1,7 +1,7 @@
 import webbrowser
 import urllib.parse
 from typing import Dict, Optional
-from logs import logger
+from logs.logger import logger
 
 def get_open_browser_tool() -> Dict:
     return {

@@ -1,0 +1,10 @@
+2026-02-11 00:06:41 - WARNING [logger.py:108] - [WARNING] [33mImage analysis tools not available: No module named 'function_calling.image_analysis'[0m
+2026-02-11 00:06:41 - WARNING [logger.py:108] - [WARNING] [33mImage analysis features will be disabled[0m
+2026-02-11 00:06:41 - SYSTEM [logger.py:108] - [SYSTEM] [93mpyautogui available for UI automation[0m
+2026-02-11 00:06:41 - SYSTEM [logger.py:108] - [SYSTEM] [93mmss available for screenshots[0m
+2026-02-11 00:06:41 - SYSTEM [logger.py:108] - [SYSTEM] [93mUI automation tools loaded successfully[0m
+2026-02-11 00:33:34 - INFO [logger.py:108] - [INFO] [94mOpened browser with URL: https://anshulsharma-pr.vercel.app/[0m
+2026-02-11 00:34:37 - INFO [logger.py:108] - [INFO] [94mOpened browser with URL: https://anshulsharma-pr.vercel.app/[0m
+2026-02-11 00:35:37 - INFO [logger.py:108] - [INFO] [94mOpened browser with URL: https://anshulsharma-pr.vercel.app/[0m
+2026-02-11 00:35:59 - INFO [logger.py:108] - [INFO] [94mOpened browser with URL: https://anshulsharma-pr.vercel.app/[0m
+2026-02-11 00:37:15 - INFO [logger.py:108] - [INFO] [94mOpened browser with URL: https://anshulsharma-pr.vercel.app/[0m
